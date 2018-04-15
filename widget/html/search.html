@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>AUI快速完成布局</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+    <style type="text/css">
+        img.icon {
+            display: block;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .aui-grid-label {
+            padding-top: 0.5rem;
+            font-size: 0.7rem !important;
+        }
+        .goods-item {
+            border: 1px solid #eee;
+            text-align: center;
+            padding: 0.5rem;
+        }
+        .goods-item img {
+            display: block;
+            width: 100%;
+            height: 7rem;
+        }
+        .title {
+            color: #666;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .title p {
+            font-size: 0.6rem;
+            color: #ccc;
+        }
+        .goods-title {
+            font-size: 0.7rem;
+            color: #333 !important;
+        }
+        .hot img {
+            width: 3rem;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <section class="aui-content">
+        <div id="aui-slide">
+            <div class="aui-slide-wrap" >
+                <div class="aui-slide-node">
+                    <img src="../image/demo/b1.jpg" />
+                </div>
+                <div class="aui-slide-node">
+                    <img src="../image/demo/b2.jpg" />
+                </div>
+                <div class="aui-slide-node">
+                    <img src="../image/demo/b3.jpg" />
+                </div>
+            </div>
+            <div class="aui-slide-page-wrap"><!--分页容器--></div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript">
+    var slide = new auiSlide({
+        container:document.getElementById("aui-slide"),
+        "height":160,
+        "speed":300,
+        "pageShow":true,
+        "pageStyle":'dot',
+        "loop":true,
+        'dotPosition':'center'
+    })
+</script>
+</html>
