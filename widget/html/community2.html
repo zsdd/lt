@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>AUI快速完成布局</title>
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
+    <style type="text/css">
+        #classify {
+            color: #ffffff !important;
+        }
+        img.icon {
+            display: block;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .aui-grid-label {
+            padding-top: 0.5rem;
+            font-size: 0.7rem !important;
+        }
+        .goods-item {
+            border: 1px solid #eee;
+            text-align: center;
+            padding: 0.5rem;
+        }
+        .goods-item img {
+            display: block;
+            width: 100%;
+            height: 7rem;
+        }
+        .title {
+            color: #666;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .title p {
+            font-size: 0.6rem;
+            color: #ccc;
+        }
+        .goods-title {
+            font-size: 0.7rem;
+            color: #333 !important;
+        }
+        .hot img {
+            width: 3rem;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <section class="aui-content">
+        <div id="aui-slide">
+            <div class="aui-slide-wrap" >
+                <div class="aui-slide-node">
+                    <img src="../image/c1.jpg" />
+                </div>
+                <div class="aui-slide-node">
+                    <img src="../image/c2.jpg" />
+                </div>
+                <div class="aui-slide-node">
+                    <img src="../image/c3.jpg" />
+                </div>
+            </div>
+            <div class="aui-slide-page-wrap"><!--分页容器--></div>
+        </div>
+    </section>
+    <section class="aui-content">
+        <div class="aui-card-list">
+            <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotostudy()">
+                <div class="aui-card-list-user-name">
+                    <div>“倾听谷语”高雅诗歌朗诵晚会央视朗诵名家作客江门</div>
+                    <i class="aui-iconfont aui-icon-down"></i>
+                </div>
+                <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
+            </div>
+            <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotostudy2()">
+                <div class="aui-card-list-user-name">
+                    <div>“凤凰悦读荟”走进定安 与现场观众共同朗诵诗词</div>
+                    <i class="aui-iconfont aui-icon-down"></i>
+                </div>
+                <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
+            </div>
+            <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotomacth()">
+                <div class="aui-card-list-user-name">
+                    <div>龙岩学院举办中华诗词文化节诗文朗诵比赛</div>
+                    <i class="aui-iconfont aui-icon-down"></i>
+                </div>
+                <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
+            </div>
+            <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotomacth()">
+                <div class="aui-card-list-user-name">
+                    <div>福建省诗歌朗诵协会举行口语展演活动</div>
+                    <i class="aui-iconfont aui-icon-down"></i>
+                </div>
+                <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
+            </div>
+            <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotomacth()">
+                <div class="aui-card-list-user-name">
+                    <div>第二届查良铮南开之夜诗歌朗诵会举行</div>
+                    <i class="aui-iconfont aui-icon-down"></i>
+                </div>
+                <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
+            </div>
+            <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotomacth()">
+                <div class="aui-card-list-user-name">
+                    <div>荣昌区作协举行“桐花映古佛”诗歌诵读会</div>
+                    <i class="aui-iconfont aui-icon-down"></i>
+                </div>
+                <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
+            </div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript" src="../script/api.js" ></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
+<script type="text/javascript">
+var slide = new auiSlide({
+    container:document.getElementById("aui-slide"),
+    "height":150,
+    "speed":300,
+    "pageShow":true,
+    "pageStyle":'dot',
+    "loop":true,
+    'dotPosition':'center'
+});
+</script>
+</html>

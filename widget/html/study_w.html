@@ -21,31 +21,34 @@
 <body>
   <!--搜索-->
     <header class="aui-bar aui-bar-nav" id="aui-header">
-        <a class="aui-pull-left aui-btn">
-            <span class="aui-iconfont aui-icon-left"></span>
-        </a>
-        <div class="aui-title" style="left:2rem; right: 0.5rem;">
-            <div class="aui-searchbar" id="search">
-                <div class="aui-searchbar-input aui-border-radius">
-                    <i class="aui-iconfont aui-icon-search"></i>
-                    <input type="search" placeholder="请输入搜索内容" id="search-input">
-                    <div class="aui-searchbar-clear-btn">
-                        <i class="aui-iconfont aui-icon-close"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+          <span class="aui-iconfont aui-icon-left"></span>
+      </a>
+    <div class="aui-title">学习</div>
+    <section class="aui-content aui-grid">
+      <div class="aui-tab" id="tab">
+          <div class="aui-tab-item aui-active">网课</div>
+          <div class="aui-tab-item" tapmode onclick="toob()">辩论思维</div>
+          <div class="aui-tab-item" tapmode onclick="toop()">普通话练习</div>
+     </div>
+     <section class="aui-content aui-grid">
+       <div class="aui-tab" id="tab">
+           <div class="aui-tab-item aui-active">体验课程</div>
+           <div class="aui-tab-item" tapmode onclick="shoufei()">收费课程</div>
+      </div>
+      </section>
+   </section>
     </header>
     <!--中间-->
     <!--广告-->
 
     <!--底部-->
     <footer class="aui-bar aui-bar-tab aui-border-t" id="footer">
-        <div class="aui-bar-tab-item aui-active" tapmode>
+        <div class="aui-bar-tab-item " tapmode onclick="gotohome()">
             <i class="aui-iconfont aui-icon-home"></i>
             <div class="aui-bar-tab-label">首页</div>
         </div>
-        <div class="aui-bar-tab-item" tapmode onclick="gotostudy()">
+        <div class="aui-bar-tab-item aui-active" tapmode >
           <div class="aui-dot"></div>
             <i class="aui-iconfont aui-icon-star"></i>
             <div class="aui-bar-tab-label">学习</div>
@@ -69,6 +72,42 @@
 <script type="text/javascript" src="../script/api.js"></script>
 
 <script type="text/javascript">
+function toob(){
+  api.openWin({
+      name: 'free',
+      url: 'studyb.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+};
+function toop(){
+  api.openWin({
+      name: 'free',
+      url: 'studyp.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+};
+function shoufei(){
+  api.openWin({
+      name: 'free',
+      url: 'free.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+};
+function gotohome(){
+  api.openWin({
+      name: 'home',
+      url: 'home.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+};
         function gotome(){
         api.openWin({
             name: 'me',
@@ -114,7 +153,7 @@
         var footer_h = $api.offset($api.dom('footer')).h;
         api.openFrame({
             name: 'homefooter_frm',
-            url: 'homefooter_frm.html',
+            url: 'studywfrm.html',
             bounces: true,
             rect: {
                 x: 0,
@@ -124,5 +163,9 @@
             }
         })
     };
+    function closeWin(){
+        api.closeWin({
+        })
+  };
 </script>
 </html>

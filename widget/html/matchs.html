@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <!-- 顶部 -->
+    <header class="aui-bar aui-bar-nav" id="aui-header">
+        <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+      <div class="aui-title">赛事</div>
+      <section class="aui-content aui-grid">
+        <div class="aui-tab" id="tab">
+            <div class="aui-tab-item " tapmode onclick="match()">辩论</div>
+            <div class="aui-tab-item " tapmode onclick="matchy()">演讲</div>
+            <div class="aui-tab-item aui-active">诗歌朗诵</div>
+       </div>
+      </section>
+    </header>
+    <footer class="aui-bar aui-bar-tab aui-border-t" id="footer">
+        <div class="aui-bar-tab-item" tapmode onclick="gotohome()">
+            <i class="aui-iconfont aui-icon-home"></i>
+            <div class="aui-bar-tab-label">首页</div>
+        </div>
+        <div class="aui-bar-tab-item " tapmode onclick="gotostudy()">
+          <div class="aui-dot"></div>
+            <i class="aui-iconfont aui-icon-star"></i>
+            <div class="aui-bar-tab-label">学习</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode onclick="gotocomminty()">
+            <div class="aui-badge">99</div>
+            <i class="aui-iconfont aui-icon-flag"></i>
+            <div class="aui-bar-tab-label">社区</div>
+        </div>
+        <div class="aui-bar-tab-item aui-active" tapmode>
+            <div class="aui-dot"></div>
+            <i class="aui-iconfont aui-icon-laud"></i>
+            <div class="aui-bar-tab-label">赛事</div>
+        </div>
+        <div class="aui-bar-tab-item" tapmode onclick="gotome()">
+            <i class="aui-iconfont aui-icon-my"></i>
+            <div class="aui-bar-tab-label">我的</div>
+        </div>
+    </footer>
+</body>
+<script type="text/javascript" src="../script/api.js" ></script>
+<script type="text/javascript">
+function gotome(){
+api.openWin({
+    name: 'me',
+    url: 'me_win.html',
+    pageParam: {
+        name: 'test'
+    }
+});
+};
+function gotocomminty(){
+api.openWin({
+  name: 'me',
+  url: 'community.html',
+  pageParam: {
+      name: 'test'
+  }
+});
+};
+function gotohome(){
+api.openWin({
+name: 'me',
+url: 'home.html',
+pageParam: {
+    name: 'test'
+}
+});
+};
+function gotostudy(){
+api.openWin({
+name: 'me',
+url: 'study_w.html',
+pageParam: {
+    name: 'test'
+}
+});
+};
+function match(){
+  api.openWin({
+      name: 'page1',
+      url: 'match.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+
+}
+function matchy(){
+  api.openWin({
+      name: 'page1',
+      url: 'matchy.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+
+}
+    apiready = function () {
+      api.parseTapmode();
+      var header = $api.byId('aui-header');
+      $api.fixStatusBar(header);
+      var headerPos = $api.offset(header);
+      var body_h = $api.offset($api.dom('body')).h;
+
+      var footer_h = $api.offset($api.dom('footer')).h;
+      api.openFrame({
+          name: 'homefooter_frm',
+          url: 'matchs2.html',
+          bounces: true,
+          rect: {
+              x: 0,
+              y: headerPos.h,
+              w: 'auto',
+              h: api.winHeight-headerPos.h-footer_h
+          }
+      });
+
+    }
+    function closeWin(){
+        api.closeWin({
+        });
+    }
+</script>
+</html>

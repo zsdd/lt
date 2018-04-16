@@ -6,9 +6,48 @@
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <title>AUI快速完成布局</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-flex.css" />
+    <link rel="stylesheet" type="text/css" href="../css/aui-slide.css" />
     <style type="text/css">
         #classify {
             color: #ffffff !important;
+        }
+        img.icon {
+            display: block;
+            margin: 0 auto;
+            width: 60%;
+        }
+        .aui-grid-label {
+            padding-top: 0.5rem;
+            font-size: 0.7rem !important;
+        }
+        .goods-item {
+            border: 1px solid #eee;
+            text-align: center;
+            padding: 0.5rem;
+        }
+        .goods-item img {
+            display: block;
+            width: 100%;
+            height: 7rem;
+        }
+        .title {
+            color: #666;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        .title p {
+            font-size: 0.6rem;
+            color: #ccc;
+        }
+        .goods-title {
+            font-size: 0.7rem;
+            color: #333 !important;
+        }
+        .hot img {
+            width: 3rem;
+            display: block;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -16,15 +55,15 @@
     <section class="aui-content ">
         <div class="aui-grid aui-bg-info">
             <div class="aui-row" id="classify">
-                <div class="aui-col-xs-3">
+                <div class="aui-col-xs-3" tapmode onclick="siao()">
                     <i class="aui-iconfont aui-icon-image"></i>
                     <div class="aui-grid-label">扫一扫</div>
                 </div>
-                <div class="aui-col-xs-3">
+                <div class="aui-col-xs-3" tapmode onclick="tomycenter()">
                     <i class="aui-iconfont aui-icon-camera"></i>
                     <div class="aui-grid-label">支付</div>
                 </div>
-                <div class="aui-col-xs-3">
+                <div class="aui-col-xs-3" tapmode onclick="gotostudy()">
                     <div class="aui-badge">新</div>
                     <i class="aui-iconfont aui-icon-pencil"></i>
                     <div class="aui-grid-label">学点啥</div>
@@ -51,7 +90,7 @@
                     <i class="aui-iconfont aui-icon-map aui-text-warning"></i>
                     <div class="aui-grid-label">位置</div>
                 </div>
-                <div class="aui-col-xs-3">
+                <div class="aui-col-xs-3" tapmode onclick="shezhi()">
                     <i class="aui-iconfont aui-icon-gear aui-text-info"></i>
                     <div class="aui-grid-label">设置</div>
                 </div>
@@ -60,30 +99,21 @@
     </section>
     <section class="aui-content">
         <div class="aui-card-list">
-            <div class="aui-card-list-header aui-card-list-user">
-                <div class="aui-card-list-user-avatar">
-                    <img src="../image/gril.jpg" class="aui-margin-r-10" style="width:2rem;border-radius:4px;" />
-                </div>
+            <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotostudy()">
                 <div class="aui-card-list-user-name">
                     <div>热门网课</div>
                     <i class="aui-iconfont aui-icon-down"></i>
                 </div>
                 <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
             </div>
-            <div class="aui-card-list-header aui-card-list-user">
-                <div class="aui-card-list-user-avatar">
-                    <img src="../image/gril.jpg" class="aui-margin-r-10" style="width:2rem;border-radius:4px;" />
-                </div>
+            <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotostudy2()">
                 <div class="aui-card-list-user-name">
                     <div>辩论思维学习</div>
                     <i class="aui-iconfont aui-icon-down"></i>
                 </div>
                 <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
             </div>
-            <div class="aui-card-list-header aui-card-list-user">
-                <div class="aui-card-list-user-avatar">
-                    <img src="../image/gril.jpg" class="aui-margin-r-10" style="width:2rem;border-radius:4px;" />
-                </div>
+            <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotomacth()">
                 <div class="aui-card-list-user-name">
                     <div>赛事中心</div>
                     <i class="aui-iconfont aui-icon-down"></i>
@@ -92,10 +122,96 @@
             </div>
         </div>
     </section>
+    <section class="aui-content">
+        <div id="aui-slide">
+            <div class="aui-slide-wrap" >
+                <div class="aui-slide-node">
+                    <img src="../image/sg2.jpg" />
+                </div>
+                <div class="aui-slide-node">
+                    <img src="../image/c2.jpg" />
+                </div>
+                <div class="aui-slide-node">
+                    <img src="../image/hd1.jpg" />
+                </div>
+            </div>
+            <div class="aui-slide-page-wrap"><!--分页容器--></div>
+        </div>
+    </section>
 </body>
 <script type="text/javascript" src="../script/api.js" ></script>
+<script type="text/javascript" src="../script/aui-slide.js"></script>
 <script type="text/javascript">
-    apiready = function () {
-    }
+function tomycenter(){
+  api.openWin({
+      name: 'tomycenter',
+      url: 'tomycenter.html',
+      pageParam: {
+          name: 'test'
+      },
+      rect:{
+          x:0,
+          y:0,
+          w:'auto',
+          h:'auto'
+      },
+      bounces: false,
+      delay:200
+  });
+}
+function siao(){
+  api.openWin({
+      name: 'siao',
+      url: 'siao.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+}
+function shezhi(){
+  api.openWin({
+      name: 'shezhi',
+      url: 'shezhi.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+}
+function gotostudy(){
+  api.openWin({
+      name: 'study_w',
+      url: 'study_w.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+}
+function gotostudy2(){
+  api.openWin({
+      name: 'study_w',
+      url: 'studyb.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+}
+function gotomacth(){
+  api.openWin({
+      name: 'me',
+      url: 'match.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+}
+var slide = new auiSlide({
+    container:document.getElementById("aui-slide"),
+    "height":90,
+    "speed":300,
+    "pageShow":true,
+    "pageStyle":'dot',
+    "loop":true,
+    'dotPosition':'center'
+});
 </script>
 </html>

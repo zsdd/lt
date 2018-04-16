@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
-    <title>AUI快速完成布局</title>
     <link rel="stylesheet" type="text/css" href="../css/aui.css" />
     <style type="text/css">
         .text-white {
@@ -19,16 +18,19 @@
     <!-- 顶部 -->
     <section class="aui-content" id="user-info">
         <div class="aui-list aui-media-list aui-list-noborder aui-bg-info">
-            <div class="aui-list-item aui-list-item-middle">
-                <div class="aui-media-list-item-inner ">
+            <div class="aui-list-item aui-list-item-middle" >
+                <div class="aui-media-list-item-inner " >
                     <div class="aui-list-item-media" style="width:3rem;">
                         <img src="../image/demo1.png" class="aui-img-round" >
                     </div>
-                    <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-inner aui-list-item-arrow" tapmode onclick="tologin()">
                         <div class="aui-list-item-text text-white aui-font-size-18">38dd4ef6d</div>
                         <div class="aui-list-item-text text-white">
-                           <div><i class="aui-iconfont aui-icon-mobile aui-font-size-14"></i>152****0989</div>
+                           <div><i class="aui-iconfont aui-icon-mobile aui-font-size-14"></i><span style="left:10px">152****0989</span></div>
                         </div>
+                    </div>
+                    <div class="aui-list-item-media" style="width:3rem;">
+                        <div class="text-white" tapmode onclick="center1()">个人中心</div>
                     </div>
                 </div>
             </div>
@@ -42,7 +44,7 @@
             </div>
             <div class="aui-col-xs-4 aui-border-r">
                 <big class="aui-text-danger">0.00<small> 个</small></big>
-                <div class="aui-gird-lable aui-font-size-12">优惠</div>
+                <div class="aui-gird-lable aui-font-size-12">卡劵</div>
             </div>
             <div class="aui-col-xs-4">
                 <big class="aui-text-success">0.00<small> 分</small></big>
@@ -52,66 +54,87 @@
     </section>
     <section class="aui-content">
         <ul class="aui-list aui-list-in aui-margin-b-15">
-            <li class="aui-list-item">
+            <li class="aui-list-item" tapmode onclick="tomystudy()">
                 <div class="aui-list-item-label-icon">
-                    <i class="aui-iconfont aui-icon-location aui-text-info"></i>
+                    <i class="aui-iconfont aui-icon-star aui-text-info"></i>
                 </div>
                 <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">收货地址</div>
+                    <div class="aui-list-item-star">我的学习</div>
                 </div>
             </li>
-            <li class="aui-list-item">
+            <li class="aui-list-item" tapmode onclick="tomyc()">
                 <div class="aui-list-item-label-icon">
-                    <i class="aui-iconfont aui-icon-like aui-text-danger"></i>
+                    <i class="aui-iconfont aui-icon-flag aui-text-danger"></i>
                 </div>
                 <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">我的收藏</div>
+                    <div class="aui-list-item-title">我的社区</div>
                 </div>
             </li>
-            <li class="aui-list-item">
+            <li class="aui-list-item" tapmode onclick="tomym()">
                 <div class="aui-list-item-label-icon">
-                    <i class="aui-iconfont aui-icon-image aui-text-info"></i>
+                    <i class="aui-iconfont aui-icon-laud aui-text-info"></i>
                 </div>
                 <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">美食相册</div>
+                    <div class="aui-list-item-title">我的赛事</div>
                 </div>
             </li>
         </ul>
         <ul class="aui-list aui-list-in">
-            <li class="aui-list-item">
+            <li class="aui-list-item" tapmode onclick="tomyz()">
                 <div class="aui-list-item-label-icon">
-                    <i class="aui-iconfont aui-icon-cart aui-text-info"></i>
+                    <i class="aui-iconfont aui-icon-cert aui-text-info"></i>
                 </div>
                 <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">积分商城</div>
-                    <div class="aui-list-item-right">0元好物在这里</div>
+                    <div class="aui-list-item-title">资讯收藏</div>
                 </div>
             </li>
-            <li class="aui-list-item">
+            <li class="aui-list-item" tapmode onclick="tomycenter()">
                 <div class="aui-list-item-label-icon">
                     <i class="aui-iconfont aui-icon-cert aui-text-warning"></i>
                 </div>
                 <div class="aui-list-item-inner aui-list-item-arrow">
-                    <div class="aui-list-item-title">会员卡</div>
-                    <div class="aui-list-item-right">未开通</div>
+                    <div class="aui-list-item-title">充值中心</div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-share aui-text-warning"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">我的会员</div>
+                </div>
+            </li>
+            <li class="aui-list-item" tapmode onclick="shezhi()">
+                <div class="aui-list-item-label-icon">
+                    <i class="aui-iconfont aui-icon-gear aui-text-warning"></i>
+                </div>
+                <div class="aui-list-item-inner aui-list-item-arrow">
+                    <div class="aui-list-item-title">设置与帮助</div>
                 </div>
             </li>
         </ul>
     </section>
-    <footer class="aui-bar aui-bar-tab">
-        <div class="aui-bar-tab-item">
-            <i class="aui-iconfont aui-icon-paper"></i>
-            <div class="aui-bar-tab-label">外卖</div>
+    <footer class="aui-bar aui-bar-tab aui-border-t" id="footer">
+        <div class="aui-bar-tab-item" tapmode onclick="gotohome()">
+            <i class="aui-iconfont aui-icon-home"></i>
+            <div class="aui-bar-tab-label">首页</div>
         </div>
-        <div class="aui-bar-tab-item">
-            <i class="aui-iconfont aui-icon-menu"></i>
-            <div class="aui-bar-tab-label">订单</div>
+        <div class="aui-bar-tab-item" tapmode onclick="gtostudy()">
+          <div class="aui-dot"></div>
+            <i class="aui-iconfont aui-icon-star"></i>
+            <div class="aui-bar-tab-label">学习</div>
         </div>
-        <div class="aui-bar-tab-item">
-            <i class="aui-iconfont aui-icon-location"></i>
-            <div class="aui-bar-tab-label">发现</div>
+        <div class="aui-bar-tab-item" tapmode onclick="gotocomminty()">
+            <div class="aui-badge">99</div>
+            <i class="aui-iconfont aui-icon-flag"></i>
+            <div class="aui-bar-tab-label">社区</div>
         </div>
-        <div class="aui-bar-tab-item aui-active">
+        <div class="aui-bar-tab-item" tapmode onclick="gotomacth()">
+            <div class="aui-dot"></div>
+            <i class="aui-iconfont aui-icon-laud"></i>
+            <div class="aui-bar-tab-label">赛事</div>
+        </div>
+        <div class="aui-bar-tab-item aui-active" tapmode>
             <i class="aui-iconfont aui-icon-my"></i>
             <div class="aui-bar-tab-label">我的</div>
         </div>
@@ -119,6 +142,179 @@
 </body>
 <script type="text/javascript" src="../script/api.js" ></script>
 <script type="text/javascript">
+function tologin(){
+  api.openWin({
+      name: 'tologin',
+      url: 'login_win.html',
+      pageParam: {
+          name: 'test'
+      },
+      rect:{
+          x:0,
+          y:0,
+          w:'auto',
+          h:'auto'
+      },
+      bounces: false,
+      delay:200
+  });
+}
+function tomyz(){
+  api.openWin({
+      name: 'tomyz',
+      url: 'tomyz.html',
+      pageParam: {
+          name: 'test'
+      },
+      rect:{
+          x:0,
+          y:0,
+          w:'auto',
+          h:'auto'
+      },
+      bounces: false,
+      delay:200
+  });
+}
+function tomycenter(){
+  api.openWin({
+      name: 'tomycenter',
+      url: 'tomycenter.html',
+      pageParam: {
+          name: 'test'
+      },
+      rect:{
+          x:0,
+          y:0,
+          w:'auto',
+          h:'auto'
+      },
+      bounces: false,
+      delay:200
+  });
+}
+function tomym(){
+  api.openWin({
+      name: 'tomym',
+      url: 'tomym.html',
+      pageParam: {
+          name: 'test'
+      },
+      rect:{
+          x:0,
+          y:0,
+          w:'auto',
+          h:'auto'
+      },
+      bounces: false,
+      delay:200
+  });
+};
+function tomyc(){
+  api.openWin({
+      name: 'tomyc',
+      url: 'tomyc.html',
+      pageParam: {
+          name: 'test'
+      },
+      rect:{
+          x:0,
+          y:0,
+          w:'auto',
+          h:'auto'
+      },
+      bounces: false,
+      delay:200
+  });
+};
+function tomystudy(){
+  api.openWin({
+      name: 'mystudy',
+      url: 'mystudy.html',
+      pageParam: {
+          name: 'test'
+      },
+      rect:{
+          x:0,
+          y:0,
+          w:'auto',
+          h:'auto'
+      },
+      bounces: false,
+      delay:200
+  });
+};
+function shezhi(){
+api.openWin({
+    name: 'shezhi',
+    url: 'shezhi.html',
+    pageParam: {
+        name: 'test'
+    },
+    rect:{
+        x:0,
+        y:0,
+        w:'auto',
+        h:'auto'
+    },
+    bounces: false,
+    delay:200
+});
+};
+function center1(){
+api.openWin({
+    name: 'center',
+    url: 'center.html',
+    pageParam: {
+        name: 'test'
+    },
+    rect:{
+        x:0,
+        y:0,
+        w:'auto',
+        h:'auto'
+    },
+    bounces: false,
+    delay:200
+});
+};
+function gotohome(){
+api.openWin({
+    name: 'home',
+    url: 'home.html',
+    pageParam: {
+        name: 'test'
+    }
+});
+};
+function gotomacth(){
+
+api.openWin({
+  name: 'match',
+  url: 'match.html',
+  pageParam: {
+      name: 'test'
+  }
+});
+};
+function gotocomminty(){
+api.openWin({
+name: 'community',
+url: 'community.html',
+pageParam: {
+    name: 'test'
+}
+});
+};
+function gtostudy(){
+api.openWin({
+name: 'study',
+url: 'study_w.html',
+pageParam: {
+    name: 'test'
+}
+});
+};
     apiready = function () {
     }
 </script>

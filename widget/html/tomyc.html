@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/aui.css" />
+    <style type="text/css">
+        .text-white {
+            color: #ffffff !important;
+        }
+        .aui-grid [class*=aui-col-] {
+            padding: 0.75rem 0;
+        }
+        .text-light {
+            color: #999 !important;
+        }
+        .aui-radio {
+            width: 1rem;
+            height: 1rem;
+        }
+    </style>
+</head>
+<body>
+  <header class="aui-bar aui-bar-nav" id="aui-header">
+      <a class="aui-btn aui-pull-left" tapmode onclick="closeWin()">
+          <span class="aui-iconfont aui-icon-left"></span>
+      </a>
+      <div class="aui-title">我的社区</div>
+  </header>
+  <section class="aui-content">
+    <ul class="aui-list aui-list-in aui-margin-b-15">
+
+    </ul>
+    <div class="aui-card-list">
+        <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotostudy()">
+            <div class="aui-card-list-user-avatar">
+                <img src="../image/gril.jpg" class="aui-margin-r-10" style="width:2rem;border-radius:4px;" />
+            </div>
+            <div class="aui-card-list-user-name">
+                <div>四级考试即将退出舞台</div>
+                <i class="aui-iconfont aui-icon-down"></i>
+            </div>
+            <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
+        </div>
+        <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotostudy2()">
+            <div class="aui-card-list-user-avatar">
+                <img src="../image/gril.jpg" class="aui-margin-r-10" style="width:2rem;border-radius:4px;" />
+            </div>
+            <div class="aui-card-list-user-name">
+                <div>四级考试即将退出舞台2</div>
+                <i class="aui-iconfont aui-icon-down"></i>
+            </div>
+            <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
+        </div>
+      </div>
+  </section>
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript">
+    function closeWin(){
+        api.closeWin({
+        });
+    }
+</script>
+</html>
