@@ -17,31 +17,25 @@
 <script type="text/javascript" src="./script/api.js"></script>
 <script type="text/javascript">
 apiready = function() {
-/*api.openFrameGroup ({
-    name: 'group1',
-    background: '#fff',
-    scrollEnabled: false,
-    rect: {
-         x: 0,
-         y: 0,
-         w: 'auto',
-         h: 'auto'
-    },
-    index: 1,
-    frames: [{
-        name: 'frame1',
-        url: 'frame1.html'
-    },{
-        name: 'frame2',
-        url: 'frame2.html'
-    }]*/
-    api.openWin({
-        name: 'home',
-        url: './html/bofang.html',
-        pageParam: {
-            name: 'test'
-        }
-    });
+  var aMap = api.require('aMap');
+  aMap.open({
+      rect: {
+          x: 0,
+          y: 0,
+          w: 'auto',
+          h: 'auto'
+      },
+      showUserLocation: true,
+      zoomLevel: 11,
+      center: {
+          lon: 116.4021310000,
+          lat: 39.9994480000
+      },
+      fixedOn: api.frameName,
+      fixed: true
+  }, function(ret, err) {
+
+});
 
 };
 </script>
