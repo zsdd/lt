@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title></title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body class="wrap">
+
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+apiready = function() {
+/*var moviePlayer = api.require('moviePlayer');
+moviePlayer.open({
+  rect:{
+        x: 0,
+        y: 0,
+        w:300,
+        h:300
+        }
+});
+    });*/
+    var videoPlayer = api.require('videoPlayer');
+    videoPlayer.play({
+        texts: {
+            head: {
+                title: '顶部文字'
+            }
+        },
+        styles: {
+        path: 'http://player.youku.com/player.php/sid/XMzU1MTE1MTQzMg==/v.swf', //（可选项）字符串类型；文档的路径，支持网络和本地（fs://）路径；默认：未传值时不播放
+        //在 android 平台上不支持 widget://
+        autoPlay: true //（可选项）布尔类型；打开时是否自动播放；默认：true（自动播放）
+    }
+    });
+    videoPlayer.fullScreen();
+    videoPlayer.start();
+};
+</script>
+
+</html>

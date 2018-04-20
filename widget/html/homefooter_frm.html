@@ -99,6 +99,13 @@
     </section>
     <section class="aui-content">
         <div class="aui-card-list">
+          <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotot()">
+              <div class="aui-card-list-user-name">
+                  <div>名师简介</div>
+                  <i class="aui-iconfont aui-icon-down"></i>
+              </div>
+              <div class="aui-card-list-user-info">最近更新：2018-4-15</div>
+          </div>
             <div class="aui-card-list-header aui-card-list-user" tapmode onclick="gotostudy()">
                 <div class="aui-card-list-user-name">
                     <div>热门网课</div>
@@ -142,6 +149,16 @@
 <script type="text/javascript" src="../script/api.js" ></script>
 <script type="text/javascript" src="../script/aui-slide.js"></script>
 <script type="text/javascript">
+function gotot(){
+  api.openWin({
+      name: 'gotot',
+      url: 'gotot.html',
+      pageParam: {
+          name: 'test'
+      }
+  });
+
+}
 function gotomap(){
   api.openWin({
       name: 'map',
